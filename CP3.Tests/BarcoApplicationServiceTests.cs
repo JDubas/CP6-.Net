@@ -6,14 +6,14 @@ using Moq;
 
 namespace CP3.Tests
 {
-    public class BarcoApplicationServiceTests
+    public class BarcoTestes
     {
         
         private readonly Mock<IBarcoRepository> _repositoryMock;
         private readonly BarcoApplicationService _BarcoService;
         
 
-        public BarcoApplicationServiceTests()
+        public BarcoTestes()
         {
             _repositoryMock = new Mock<IBarcoRepository>();
             _BarcoService = new BarcoApplicationService(_repositoryMock.Object);
@@ -22,7 +22,7 @@ namespace CP3.Tests
         }
 
         [Fact]
-        public void AdicionarBarco()
+        public void NovoBarco()
         {
             // Arrange
             var barcoDto = new Mock<IBarcoDto>();
@@ -82,7 +82,7 @@ namespace CP3.Tests
             Assert.Equal(barcoEntity.Tamanho, result.Tamanho);
         }
         [Fact]
-        public void ObterBarcoPorId()
+        public void BuscarPorId()
         {
             // Arrange
             var barcoEntity = new BarcoEntity
@@ -107,7 +107,7 @@ namespace CP3.Tests
         }
 
         [Fact]
-        public void ObterTodosBarcos()
+        public void BuscarTodos()
         {
             // Arrange
             var barcoEntity = new BarcoEntity
@@ -132,7 +132,7 @@ namespace CP3.Tests
             Assert.Equal(barcoEntity.Tamanho, result.First().Tamanho);
         }
         [Fact]
-        public void RemoverBarco()
+        public void DeletarBarco()
         {
             // Arrange
             var barcoEntity = new BarcoEntity
