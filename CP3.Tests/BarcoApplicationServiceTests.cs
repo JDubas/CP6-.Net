@@ -155,7 +155,7 @@ namespace CP3.Tests
             Assert.Equal(barcoEntity.Ano, result.Ano);
             Assert.Equal(barcoEntity.Tamanho, result.Tamanho);
         }
-
+        //Finalizado
 
     }
 }
